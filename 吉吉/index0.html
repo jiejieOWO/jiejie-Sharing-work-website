@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>作品分享平台 — 林子捷</title>
+<style>
+:root{
+  --pink:#F9CADB;
+  --pink-soft:#FCECEC;
+  --accent:#FF6B9A;
+  --bg:#FFF8F9;
+  --card:#FFFFFF;
+  --muted:#8a8a8a;
+  --radius:14px;
+  --shadow: 0 6px 18px rgba(12,12,12,0.06);
+}
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  font-family:"Noto Sans TC","Microsoft JhengHei",system-ui;
+  background: var(--bg);
+  color:#333;
+  scroll-behavior: smooth;
+}
+#container{
+  max-width:1200px;
+  margin:20px auto;
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  background:#fff;
+}
+#header{
+  background:var(--pink);
+  padding:20px;
+  text-align:center;
+  font-weight:700;
+  font-size:22px;
+  color:#8a2b4b;
+}
+.main-content{
+  display:flex;
+  gap:20px;
+  padding:20px;
+}
+#menu{
+  width:250px;
+  background:var(--pink-soft);
+  border-radius:var(--radius);
+  padding:10px;
+
+  position: sticky;
+  top: 20px;
+  align-self: flex-start;
+}
+
+#nav{
+  list-style:none;
+  padding:0;
+  margin:0;
+}
+#nav li{position:relative;}
+#nav li a{
+  display:block;
+  padding:10px;
+  margin:5px 0;
+  text-decoration:none;
+  color:#444;
+  border-radius:10px;
+  font-weight:600;
+  transition:0.3s;
+}
+#nav li a:hover,
+#nav li a.active{
+  background:var(--accent);
+  color:white;
+}
+.sub-menu{
+  display:none;
+  list-style:none;
+  padding-left:0;
+  margin:0;
+  position:absolute;
+  left:100%;
+  top:0;
+  background:var(--pink-soft);
+  border-radius:10px;
+  min-width:180px;
+  box-shadow:var(--shadow);
+}
+#nav li:hover > .sub-menu{
+  display:block;
+}
+.sub-menu li a{
+  padding:8px;
+  font-weight:500;
+}
+#content{
+  flex:1;
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+}
+.works-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(250px,1fr));
+  gap:18px;
+}
+.card{
+  background:var(--card);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  overflow:hidden;
+  transition:0.2s;
+}
+.card:hover{
+  transform:translateY(-4px) scale(1.02);
+  box-shadow:0 20px 36px rgba(12,12,12,0.08);
+}
+.card img{
+  width:100%;
+  aspect-ratio:16/10;
+  object-fit:cover;
+}
+.card .meta{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:10px;
+}
+.card .title{font-weight:700;}
+.card .desc{
+  font-size:13px;
+  color:var(--muted);
+  padding:0 10px 10px 10px;
+}
+.form-card{
+  padding:16px;
+  border-radius:var(--radius);
+  background:var(--pink-soft);
+  box-shadow:var(--shadow);
+}
+#footer{
+  text-align:center;
+  padding:20px;
+  background:var(--pink-soft);
+  color:#8a2b4b;
+  font-weight:600;
+  border-top:1px solid rgba(0,0,0,0.05);
+}
+@media(max-width:900px){
+  .main-content{flex-direction:column;}
+  #menu{width:100%;}
+}
+</style>
+</head>
+<body>
+
+<div id="container">
+  <div id="header">作品分享平台散播你的快樂:D</div>
+
+  <div class="main-content">
+    <div id="menu">
+      <ul id="nav">
+        <li><a href="#home">首頁</a></li>
+        <li>
+          <a href="#myworks">我的作品</a>
+          <ul class="sub-menu">
+            <li><a href="#workA">電繪</a></li>
+            <li><a href="#workB">手繪</a></li>
+            <li><a href="#workC">人設</a></li>
+          </ul>
+        </li>
+        <li><a href="#latest">最新投稿</a></li>
+        <li><a href="#featured">精選作品</a></li>
+        <li><a href="#contact">聯絡資訊</a></li>
+      </ul>
+    </div>
+
+    <div id="content">
+      <section id="home">
+        <h2>歡迎來到作品分享平台</h2>
+        <p>這裡是林子捷的個人作品展示區，可以看到插畫、攝影和平面設計作品。</p>
+      </section>
+
+      <section id="myworks">
+        <h2>我的作品</h2>
+        <div class="works-grid">
+
+          <!-- 作品 A -->
+          <a href="workA.html" target="_blank" style="text-decoration:none;color:inherit;">
+            <div class="card" id="workA">
+              <img src="C:\Users\USER\Desktop\吉吉\images\cat.PNG" alt="作品 A">
+              <div class="meta">
+                <div class="title">電繪 </div>
+                <div class="badge">最新</div>
+              </div>
+              <div class="desc">放上你的作品讓大家看看吧</div>
+            </div>
+          </a>
+
+          <!-- 作品 B -->
+          <a href="workB.html" target="_blank" style="text-decoration:none;color:inherit;">
+            <div class="card" id="workB">
+              <img src="C:\Users\USER\Desktop\吉吉\images\cat2.PNG" alt="作品 B">
+              <div class="meta">
+                <div class="title">手繪 </div>
+                <div class="badge">最新</div>
+              </div>
+              <div class="desc">讓大家觀賞你的可愛圖圖</div>
+            </div>
+          </a>
+
+          <!-- 作品 C -->
+          <a href="workC.html" target="_blank" style="text-decoration:none;color:inherit;">
+            <div class="card" id="workC">
+              <img src="C:\Users\USER\Desktop\吉吉\images\cat3.PNG" alt="作品 C">
+              <div class="meta">
+                <div class="title">人設 </div>
+                <div class="badge">最新</div>
+              </div>
+              <div class="desc">展示你自己吧</div>
+            </div>
+          </a>
+
+        </div>
+      </section>
+
+      <section id="latest">
+        <h2>最新作品</h2>
+         <div class="works-grid">
+
+          <!-- 作品 A -->
+          
+            <div class="card" id="workA">
+              <img src="C:\Users\USER\Desktop\吉吉\images\a3.JPG" alt="作品 A">
+              <div class="meta">
+                <div class="title">NEW  </div>
+                <div class="badge">最新</div>
+              </div>
+              <div class="desc">最新上傳作品</div>
+            </div>
+          </a>
+
+          <!-- 作品 B -->
+          
+            <div class="card" id="workB">
+              <img src="C:\Users\USER\Desktop\吉吉\images\b8.JPG" alt="作品 B">
+              <div class="meta">
+                <div class="title">NEW </div>
+                <div class="badge">最新</div>
+              </div>
+              <div class="desc"></div>
+            </div>
+          </a>
+
+          <!-- 作品 C -->
+          
+            <div class="card" id="workC">
+              <img src="C:\Users\USER\Desktop\吉吉\images\c1.JPG" alt="作品 C">
+              <div class="meta">
+                <div class="title">NEW </div>
+                <div class="badge">最新</div>
+              </div>
+              <div class="desc"></div>
+            </div>
+          </a>
+
+        </div>
+      </section>
+
+      <section id="featured">
+        <h2>精選作品</h2>
+        <div class="works-grid">
+          <div class="card">
+            <img src="C:\Users\USER\Desktop\吉吉\images\a6.PNG" alt="精選">
+            <div class="meta">
+              <div class="title">大家最愛作品</div>
+              <div class="badge">編輯推薦</div>
+            </div>
+            <div class="desc"></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="submit">
+        <div class="form-card">
+          <h3>我要分享（投稿）</h3>
+          <iframe 
+            src="https://docs.google.com/forms/d/e/1FAIpQLSfM0u9H0dhsATtHdnFvi_KpHR0SxZHuvllC2VC4XQkOEiBb3Q/viewform?embedded=true"
+            width="100%" 
+            height="1200" 
+            frameborder="0" 
+            marginheight="0" 
+            marginwidth="0">
+            載入中…
+          </iframe>
+        </div>
+      </section>
+
+      <section id="contact">
+        <h2>聯絡資訊</h2>
+        <p>Email：a784895@gmail.com</p>
+      </section>
+    </div>
+  </div>
+
+  <div id="footer">
+    © 2025 吉吉 作品分享平台
+  </div>
+</div>
+
+</body>
+</html>
